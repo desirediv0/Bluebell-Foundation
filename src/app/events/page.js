@@ -5,13 +5,14 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const events = [
     {
-        title: 'Education Drive at Asha Grih',
+        title: 'Education Drive by BlueBell Foundation At ASHA GRIH',
         date: 'March 15, 2024',
-        location: 'Dwarka, New Delhi',
-        description: 'Bluebell Foundation organized an education drive to support underprivileged children by providing learning materials and encouragement towards education.',
+        location: 'ASHA GRIH, Dwarka, New Delhi',
+        description: 'Bluebell Foundation organized an education drive to support underprivileged children by providing learning materials, books, stationery, and encouragement towards education. The event was held at ASHA GRIH where we distributed educational resources to children.',
         status: 'completed',
         image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=2013',
     },
@@ -77,9 +78,11 @@ export default function Events() {
                             >
                                 <div className="bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-2 border border-gray-200/50 hover:border-[#1E73BE]/20">
                                     <div className="relative aspect-[16/10] overflow-hidden">
-                                        <img
+                                        <Image
                                             src={event.image}
                                             alt={event.title}
+                                            width={800}
+                                            height={500}
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         />
                                         <div className="absolute top-4 right-4">

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Heart, Users, Leaf, Utensils } from 'lucide-react';
+import { GraduationCap, Heart, Users, Briefcase, Leaf, Utensils, Home } from 'lucide-react';
 
 const focusAreas = [
     {
@@ -46,6 +46,19 @@ const focusAreas = [
         iconColor: 'text-[#1E73BE]',
     },
     {
+        icon: Briefcase,
+        title: 'Employment Generation',
+        description: 'Creating employment and skill opportunities to promote economic self-reliance and sustainable livelihoods.',
+        programs: [
+            'Skill development and vocational training',
+            'Job placement and career counseling',
+            'Micro-enterprise support',
+            'Entrepreneurship development programs',
+        ],
+        color: 'bg-[#EAF4FF]',
+        iconColor: 'text-[#1E73BE]',
+    },
+    {
         icon: Leaf,
         title: 'Environmental Protection',
         description: 'Promoting tree plantation, biodiversity conservation, and sustainable environmental practices.',
@@ -67,6 +80,19 @@ const focusAreas = [
             'Community kitchens',
             'Nutrition awareness programs',
             'Sustainable agriculture support',
+        ],
+        color: 'bg-[#EAF4FF]',
+        iconColor: 'text-[#1E73BE]',
+    },
+    {
+        icon: Home,
+        title: 'Rural Development',
+        description: 'Empowering rural communities through infrastructure development, access to resources, and sustainable growth initiatives.',
+        programs: [
+            'Rural infrastructure development',
+            'Access to clean water and sanitation',
+            'Agricultural support programs',
+            'Community development initiatives',
         ],
         color: 'bg-[#EAF4FF]',
         iconColor: 'text-[#1E73BE]',

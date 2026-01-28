@@ -43,7 +43,7 @@ export default function AboutUs() {
                             className="space-y-8"
                         >
                             <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#1F2937] leading-relaxed">
-                                Bluebell Foundation is a non-governmental organization working towards social upliftment and nation-building. We believe in inclusive growth, equal opportunities, and empowering individuals to live with dignity and self-reliance.
+                                A non-governmental organization (NGO), Bluebell Foundation is dedicated to unlocking the potential of communities through Environmental Protection, Health and Sanitation, Education and Skill Development, Employment Generation, Women Empowerment and Child Welfare, Rural development, and Hunger Eradication.
                             </p>
                             <Link
                                 href="/contact-us"
@@ -83,11 +83,11 @@ export default function AboutUs() {
                         {[
                             {
                                 title: 'Our Mission',
-                                content: 'To build a society where peace, education, and equality prevail, ensuring access to education, healthcare, employment, housing, sanitation, and economic self-reliance for all, irrespective of color, language, or gender.',
+                                content: 'Bluebell Foundation visualizes a society in which peace, education and equality prevail and strives to build in India where all people have access to education, healthcare, employment, housing & sanitation and economic self-reliance, and where all Indian can realize their full potential off setting barriers of color, language and gender.',
                             },
                             {
                                 title: 'Our Vision',
-                                content: 'To rebuild human dignity of the poor and marginalized through education, healthcare, environmental protection, and sustainable livelihood opportunities, creating a safer and inclusive society for all.',
+                                content: 'Rebuild the human dignity of the poor and marginalized through an empowerment process, education, environmental protection, health care, and create opportunities for a sustainable society. Our mission is the bringing of educational opportunity and to promote health and social rights to those to whom such opportunities have previously been denied to poverty family circumstances or oppression. The trust aims to work with the most marginalized members of the community and help create a safer environment for all men women & children, especially vulnerable children and to provide support and encouragement to help improve their living and social conditions, through rights-based and ethically sound education, vocational training, protection and care and financial independence initiatives in order to help them recognize their importance and value as a responsible individual within civil society.',
                             },
                             {
                                 title: 'Our Values',

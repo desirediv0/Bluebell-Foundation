@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Heart, Check, Shield, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function Donate() {
     const ref = useRef(null);
@@ -55,6 +56,7 @@ export default function Donate() {
                     </motion.div>
 
                     <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+                        {/* Left Column - Content */}
                         <motion.div
                             initial={{ opacity: 0, x: -40 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
@@ -108,11 +110,44 @@ export default function Donate() {
                             </motion.div>
                         </motion.div>
 
+                        {/* Right Column - Images & Form */}
                         <motion.div
                             initial={{ opacity: 0, x: 40 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
+                            className="space-y-6"
                         >
+                            {/* Donation Images */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                                className="relative rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500"
+                            >
+                                <Image
+                                    src="/img (2).jpeg"
+                                    alt="Donate For Children"
+                                    width={600}
+                                    height={800}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.8 }}
+                                className="relative rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500"
+                            >
+                                <Image
+                                    src="/img (6).jpeg"
+                                    alt="Every Child Deserves Education"
+                                    width={600}
+                                    height={800}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </motion.div>
+
                             <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 lg:p-10 xl:p-14 rounded-3xl shadow-soft">
                                 <h3 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
                                     Donation Amount
@@ -208,6 +243,26 @@ export default function Donate() {
                             </form>
                         </motion.div>
                     </div>
+
+                    {/* Additional Donation Images Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 1.0 }}
+                        className="mt-12 md:mt-16"
+                    >
+                        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                            <div className="relative rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-2">
+                                <Image
+                                    src="/img (3).jpeg"
+                                    alt="Hope For Tomorrow - Fundraising for Children's Education"
+                                    width={600}
+                                    height={800}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </main>

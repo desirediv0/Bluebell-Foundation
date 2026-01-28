@@ -40,8 +40,8 @@ export default function MissionVision() {
             <h3 className="font-heading text-title text-[#1F2937] mb-4 md:mb-6">
               Our Mission
             </h3>
-            <p className="text-body text-[#6B7280] leading-relaxed">
-              To build a society where peace, education, and equality prevail, ensuring access to education, healthcare, employment, housing, sanitation, and economic self-reliance for all, irrespective of color, language, or gender.
+            <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed">
+              Bluebell Foundation visualizes a society in which peace, education and equality prevail and strives to build in India where all people have access to education, healthcare, employment, housing & sanitation and economic self-reliance, and where all Indian can realize their full potential off setting barriers of color, language and gender.
             </p>
           </motion.div>
 
@@ -59,7 +59,10 @@ export default function MissionVision() {
               Our Vision
             </h3>
             <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed">
-              To rebuild human dignity of the poor and marginalized through education, healthcare, environmental protection, and sustainable livelihood opportunities, creating a safer and inclusive society for all.
+              Rebuild the human dignity of the poor and marginalized through an empowerment process, education, environmental protection, health care, and create opportunities for a sustainable society. Our mission is the bringing of educational opportunity and to promote health and social rights to those to whom such opportunities have previously been denied to poverty family circumstances or oppression.
+            </p>
+            <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed mt-4">
+              The trust aims to work with the most marginalized members of the community and help create a safer environment for all men women & children, especially vulnerable children and to provide support and encouragement to help improve their living and social conditions, through rights-based and ethically sound education, vocational training, protection and care and financial independence initiatives in order to help them recognize their importance and value as a responsible individual within civil society.
             </p>
           </motion.div>
         </div>

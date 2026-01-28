@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const initiatives = [
   {
@@ -63,6 +64,33 @@ export default function ImpactSection() {
           </p>
         </motion.div>
 
+        {/* Hunger Eradication Images */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-24"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-2">
+            <Image
+              src="/img (4).jpeg"
+              alt="Feed the Homeless"
+              width={600}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="relative rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-2">
+            <Image
+              src="/img (5).jpeg"
+              alt="Don't Waste Food - Donate Food and Help Needy Children"
+              width={600}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </motion.div>
+
         <div className="space-y-24">
           {initiatives.map((initiative, index) => (
             <motion.div
@@ -75,9 +103,11 @@ export default function ImpactSection() {
             >
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-medium">
-                  <img
+                  <Image
                     src={initiative.image}
                     alt={initiative.title}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1E73BE]/30 to-transparent" />

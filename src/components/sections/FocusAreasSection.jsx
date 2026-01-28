@@ -9,7 +9,8 @@ import {
     Users,
     Briefcase,
     Leaf,
-    Utensils
+    Utensils,
+    Home
 } from 'lucide-react';
 
 const focusAreas = [
@@ -48,6 +49,12 @@ const focusAreas = [
         title: 'Hunger Eradication',
         description: 'Conducting food distribution drives and awareness programs to fight hunger and malnutrition.',
         stats: 'Fighting Hunger & Malnutrition',
+    },
+    {
+        icon: Home,
+        title: 'Rural Development',
+        description: 'Empowering rural communities through infrastructure development, access to resources, and sustainable growth initiatives.',
+        stats: 'Building Rural Communities',
     },
 ];
 
