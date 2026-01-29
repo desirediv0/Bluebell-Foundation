@@ -1,69 +1,102 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Target, Eye } from 'lucide-react';
 
 export default function MissionVision() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="about" className="py-12 md:py-16 lg:py-20 bg-gradient-blue-soft overflow-x-hidden" ref={ref}>
-      <div className="container-padding max-w-7xl mx-auto">
+    <section
+      ref={ref}
+      id="about"
+      className="py-24 bg-gradient-to-br from-[#EAF4FF] via-white to-[#EAF4FF]/40"
+    >
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-20"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <span className="text-sm font-semibold text-[#1E73BE] tracking-wider uppercase">
+          <span className="text-sm font-semibold tracking-wider text-[#1E73BE] uppercase">
             Our Purpose
           </span>
-          <h2 className="font-heading text-headline text-[#1F2937] mt-4">
+          <h2 className="mt-4 text-4xl md:text-6xl font-bold text-gray-900">
             Guided by Purpose, Driven by Impact
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Mission */}
+        {/* CONTENT */}
+        <div className="grid lg:grid-cols-2 gap-12">
+
+          {/* MISSION */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white p-6 md:p-8 lg:p-10 xl:p-14 rounded-3xl shadow-soft hover-lift group"
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-xl transition"
           >
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#1E73BE]/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-[#1E73BE]/15 transition-colors duration-300">
-              <Target className="w-8 h-8 md:w-10 md:h-10 text-[#1E73BE]" />
+            <div className="w-16 h-16 bg-[#1E73BE]/10 rounded-2xl flex items-center justify-center mb-6">
+              <Target className="w-8 h-8 text-[#1E73BE]" />
             </div>
-            <h3 className="font-heading text-title text-[#1F2937] mb-4 md:mb-6">
+
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
               Our Mission
             </h3>
-            <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed">
-              Bluebell Foundation visualizes a society in which peace, education and equality prevail and strives to build in India where all people have access to education, healthcare, employment, housing & sanitation and economic self-reliance, and where all Indian can realize their full potential off setting barriers of color, language and gender.
+
+            <p className="text-lg text-gray-600 leading-relaxed max-w-prose">
+              Bluebell Foundation visualizes a society in which peace, education
+              and equality prevail and strives to build in India where all people
+              have access to education, healthcare, employment, housing &
+              sanitation and economic self-reliance, and where all Indian can
+              realize their full potential off setting barriers of color,
+              language and gender.
             </p>
           </motion.div>
 
-          {/* Vision */}
+          {/* VISION */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white p-6 md:p-8 lg:p-10 xl:p-14 rounded-3xl shadow-soft hover-lift group"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-xl transition"
           >
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#4CAF50]/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-[#4CAF50]/15 transition-colors duration-300">
-              <Eye className="w-8 h-8 md:w-10 md:h-10 text-[#4CAF50]" />
+            <div className="w-16 h-16 bg-[#4CAF50]/10 rounded-2xl flex items-center justify-center mb-6">
+              <Eye className="w-8 h-8 text-[#4CAF50]" />
             </div>
-            <h3 className="font-heading text-title text-[#1F2937] mb-4 md:mb-6">
+
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
               Our Vision
             </h3>
-            <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed">
-              Rebuild the human dignity of the poor and marginalized through an empowerment process, education, environmental protection, health care, and create opportunities for a sustainable society. Our mission is the bringing of educational opportunity and to promote health and social rights to those to whom such opportunities have previously been denied to poverty family circumstances or oppression.
-            </p>
-            <p className="text-sm md:text-base lg:text-lg text-[#6B7280] leading-relaxed mt-4">
-              The trust aims to work with the most marginalized members of the community and help create a safer environment for all men women & children, especially vulnerable children and to provide support and encouragement to help improve their living and social conditions, through rights-based and ethically sound education, vocational training, protection and care and financial independence initiatives in order to help them recognize their importance and value as a responsible individual within civil society.
-            </p>
+
+            <div className="space-y-5 text-lg text-gray-600 leading-relaxed max-w-prose">
+              <p>
+                Rebuild the human dignity of the poor and marginalized through
+                an empowerment process, education, environmental protection,
+                health care, and create opportunities for a sustainable society.
+                Our mission is the bringing of educational opportunity and to
+                promote health and social rights to those to whom such
+                opportunities have previously been denied to poverty family
+                circumstances or oppression.
+              </p>
+
+              <p>
+                The trust aims to work with the most marginalized members of the
+                community and help create a safer environment for all men women &
+                children, especially vulnerable children and to provide support
+                and encouragement to help improve their living and social
+                conditions, through rights-based and ethically sound education,
+                vocational training, protection and care and financial
+                independence initiatives in order to help them recognize their
+                importance and value as a responsible individual within civil
+                society.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
