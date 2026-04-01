@@ -19,7 +19,7 @@ Our foundation is committed to serve our people and working tirelessly for the b
 Together, with your support and collaboration, we will march forward towards a brighter tomorrow. Let us unite our efforts, harness our collective strength, and build a nation where every individual can thrive and prosper.
 
 Thank you for your unwavering support.`,
-        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000',
+        image: '/leader-placeholder.png',
         achievements: 'Leading Nation Building',
     },
     {
@@ -35,7 +35,7 @@ We tirelessly strive to generate employment opportunities for youth, promote edu
 Together, we can create a future that shines brightly for generations to come.
 
 Warm regards`,
-        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000',
+        image: '/leader-placeholder.png',
         achievements: 'Championing Humanity',
     },
     {
@@ -56,7 +56,7 @@ We are dedicated to promoting:
 Let's make the world a better place.
 
 Jai Hind • Jai Bharat`,
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000',
+        image: '/leader-placeholder.png',
         achievements: 'Building a Better World',
     },
 ];

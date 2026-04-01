@@ -1,60 +1,60 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Heart, Mail, Phone, MapPin,  ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-const footerLinks = {
-    'About Us': ['Our Story', 'Leadership Team', 'Annual Reports', 'Careers', 'Partners'],
-    'Our Work': ['Education', 'Healthcare', 'Women Empowerment', 'Environment', 'Livelihoods'],
-    'Get Involved': ['Donate', 'Volunteer', 'Corporate Partnership', 'Fundraise', 'Events'],
-    'Resources': ['News & Media', 'Publications', 'Blog', 'FAQs', 'Contact Us'],
-};
-
-const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
+const navLinks = [
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Focus Areas', href: '/focus-areas' },
+    { name: 'Initiatives', href: '/initiatives' },
+    { name: 'Events', href: '/events' },
+    { name: 'Contact', href: '/contact-us' },
 ];
+
 
 export default function Footer() {
     return (
-        <footer id="contact" className="bg-gradient-footer text-white">
+        <footer id="contact" className="bg-[#0A192F] text-white pt-24 pb-12 overflow-hidden relative">
+            {/* Background Decoration */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#1E73BE] to-transparent opacity-30" />
+            
             {/* CTA Section */}
-            <div className="container-padding max-w-7xl mx-auto ">
+            <div className="container-padding max-w-7xl mx-auto mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative -top-20 bg-[#1E73BE] rounded-3xl p-12 lg:p-16 shadow-glow"
+                    className="bg-[#1E73BE] rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group"
                 >
-                    <div className="grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
+                    {/* Decorative Circles */}
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-colors duration-700" />
+                    <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
+
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
                         <div>
-                            <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                                Ready to Make a Difference?
+                            <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                                Let's build a <span className="text-[#EAF4FF]">better tomorrow</span> together.
                             </h3>
-                            <p className="text-white/80 text-lg leading-relaxed">
-                                Your contribution can transform lives. Join thousands of donors who
-                                are helping us build a better tomorrow.
+                            <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl">
+                                Join our mission to empower communities and transform lives across the nation.
                             </p>
                         </div>
-                        <div className="flex flex-wrap gap-3 md:gap-4 lg:justify-end">
+                        <div className="flex flex-wrap gap-4 lg:justify-end">
                             <Link href="/leadership">
-                                <Button variant="secondary" size="lg" className="bg-white/10 text-white hover:bg-white/20 border-white/20 text-sm md:text-base">
-                                    Become a Volunteer
+                                <Button variant="secondary" size="xl" className="bg-white/10 text-white hover:bg-white/20 border-white/20 backdrop-blur-md px-8">
+                                    Volunteer With Us
                                 </Button>
                             </Link>
                             <Link href="/donate">
                                 <Button
-                                    size="lg"
-                                    className="bg-white text-[#1E73BE] hover:bg-white/90 text-sm md:text-base"
+                                    size="xl"
+                                    className="bg-white text-[#1E73BE] hover:bg-[#EAF4FF] px-8 shadow-xl hover:shadow-2xl transition-all duration-300"
                                 >
-                                    <Heart className="w-4 h-4 md:w-5 md:h-5" />
+                                    <Heart className="w-5 h-5 fill-current" />
                                     Donate Now
                                 </Button>
                             </Link>
@@ -63,108 +63,93 @@ export default function Footer() {
                 </motion.div>
             </div>
 
-            {/* Main Footer */}
-            <div className="container-padding max-w-7xl mx-auto pb-8 md:pb-12">
-                <div className="grid lg:grid-cols-6 gap-12 lg:gap-8">
-                    {/* Logo & Description */}
-                    <div className="lg:col-span-2 space-y-6">
-                        <div className="flex items-center gap-3">
+            {/* Main Footer Content */}
+            <div className="container-padding max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
+                    
+                    {/* Organization Info */}
+                    <div className="lg:col-span-5 space-y-8">
+                        <div className="inline-block p-3 bg-white rounded-2xl shadow-lg">
                             <Image 
                                 src="/logo.png"
                                 alt="Bluebell Foundation"
                                 width={180}
-                                height={70}
-                                className="bg-white p-2 rounded-xl h-16 w-auto shadow-lg" 
+                                height={60}
+                                className="h-12 w-auto" 
                                 priority
                             />
                         </div>
-                        <p className="text-white/70 leading-relaxed">
-                            Dedicated to serving humanity with dignity, compassion, and purpose.
-                            Together, we are building a world where every individual can thrive.
+                        <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+                            Bluebell Foundation is dedicated to serving humanity with dignity, compassion, and purpose. We focus on education, healthcare, and sustainable development.
                         </p>
-                        <div className="flex gap-2 md:gap-3">
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    aria-label={social.label}
-                                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
-                                >
-                                    <social.icon className="w-5 h-5 text-white" />
-                                </a>
+                       
+                    </div>
+
+                    {/* Quick Navigation */}
+                    <div className="lg:col-span-3">
+                        <h4 className="text-xl font-bold mb-8 relative inline-block">
+                            Quick Links
+                            <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#1E73BE] rounded-full" />
+                        </h4>
+                        <ul className="space-y-4">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-white flex items-center group transition-colors duration-300"
+                                    >
+                                        <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#1E73BE]" />
+                                        {link.name}
+                                    </Link>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
 
-                    {/* Footer Links */}
-                    {Object.entries(footerLinks).map(([title, links]) => (
-                        <div key={title}>
-                            <h4 className="font-semibold text-white mb-6">{title}</h4>
-                            <ul className="space-y-2 md:space-y-3">
-                                {links.map((link) => (
-                                    <li key={link}>
-                                        <a
-                                            href="#"
-                                            className="text-white/60 hover:text-white transition-colors duration-300"
-                                        >
-                                            {link}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Contact Info */}
-                <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-white/10">
-                    <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-                        <div className="flex items-center gap-3 md:gap-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                <Mail className="w-4 h-4 md:w-5 md:h-5 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-xs md:text-sm text-white/60">Email Us</div>
-                                <div className="text-sm md:text-base text-white font-medium">admin@bluebellservice.co.in</div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4">
-                            <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                <Phone className="w-5 h-5 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-xs md:text-sm text-white/60">Call Us</div>
-                                <div className="text-sm md:text-base text-white font-medium">+91 7303249605</div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4">
-                            <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                <MapPin className="w-5 h-5 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-sm text-white/60">Visit Us</div>
-                                <div className="text-white font-medium">Dwarka, New Delhi, India</div>
+                    {/* Contact Details */}
+                    <div className="lg:col-span-4">
+                        <h4 className="text-xl font-bold mb-8 relative inline-block">
+                            Contact Us
+                            <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#1E73BE] rounded-full" />
+                        </h4>
+                        <div className="space-y-6">
+                            <a href="mailto:admin@bluebellservice.co.in" className="flex items-start gap-4 group">
+                                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-[#1E73BE]/20 transition-colors border border-white/10">
+                                    <Mail className="w-5 h-5 text-[#1E73BE]" />
+                                </div>
+                                <div>
+                                    <div className="text-sm text-gray-500 mb-1">Email Address</div>
+                                    <div className="text-gray-300 font-medium group-hover:text-white transition-colors">admin@bluebellservice.co.in</div>
+                                </div>
+                            </a>
+                            <a href="tel:+917303249605" className="flex items-start gap-4 group">
+                                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-[#1E73BE]/20 transition-colors border border-white/10">
+                                    <Phone className="w-5 h-5 text-[#1E73BE]" />
+                                </div>
+                                <div>
+                                    <div className="text-sm text-gray-500 mb-1">Phone Number</div>
+                                    <div className="text-gray-300 font-medium group-hover:text-white transition-colors">+91 7303249605</div>
+                                </div>
+                            </a>
+                            <div className="flex items-start gap-4 group">
+                                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
+                                    <MapPin className="w-5 h-5 text-[#1E73BE]" />
+                                </div>
+                                <div>
+                                    <div className="text-sm text-gray-500 mb-1">Office Location</div>
+                                    <div className="text-gray-300 font-medium">Dwarka, New Delhi, India</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/50 text-xs md:text-sm">
-                        © {new Date().getFullYear()} Bluebell Foundation. All rights reserved.
+                {/* Footer Bottom */}
+                <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-gray-500 text-sm">
+                        © {new Date().getFullYear()} Bluebell Foundation. Built with compassion for a better world.
                     </p>
-                    <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm">
-                        <a href="#" className="text-white/50 hover:text-white transition-colors">
-                            Privacy Policy
-                        </a>
-                        <a href="#" className="text-white/50 hover:text-white transition-colors">
-                            Terms of Service
-                        </a>
-                        <a href="#" className="text-white/50 hover:text-white transition-colors">
-                            Cookie Policy
-                        </a>
-                    </div>
+                   
                 </div>
             </div>
         </footer>
