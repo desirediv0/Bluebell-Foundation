@@ -1,12 +1,39 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Heart, Hand } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { useState, useEffect, useCallback } from 'react';
+
+// --- Image Carousel Data ---
+const carouselImages = [
+    {
+        src: '/home.jpg',
+        alt: 'Children receiving education and support',
+    },
+    {
+        src: '/home2.jpg',
+        alt: 'Women empowerment programs',
+    },
+    {
+        src: '/home3.jpg',
+        alt: 'Healthcare outreach in rural India',
+    },
+];
 
 export default function HeroSection() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextSlide = useCallback(() => {
+        setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 3000);
+        return () => clearInterval(interval);
+    }, [nextSlide]);
+
     return (
         <section className="min-h-[90vh] md:min-h-screen bg-white flex items-center relative overflow-x-hidden w-full">
             {/* Subtle Abstract Background Shapes */}
@@ -81,7 +108,7 @@ export default function HeroSection() {
                             </span>
                         </motion.div>
 
-                        {/* Main Headline - Editorial Style */}
+                        {/* Main Headline */}
                         <motion.h1
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -107,12 +134,12 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-lg md:text-xl  text-[#6B7280] max-w-xl leading-relaxed font-light"
+                            className="text-lg md:text-xl text-[#6B7280] max-w-xl leading-relaxed font-light"
                         >
                             Bluebell Foundation is a non-governmental organization committed to education, healthcare, women empowerment, environmental protection, and sustainable development across India.
                         </motion.p>
 
-                        {/* CTA Buttons - Premium Pill Shape */}
+                        {/* CTA Buttons */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -142,14 +169,14 @@ export default function HeroSection() {
                         </motion.div>
                     </div>
 
-                    {/* Right Side - Circular Image with Floating Badge */}
+                    {/* Right Side - Circular Image Carousel + Floating Badge */}
                     <motion.div
                         initial={{ opacity: 0, x: 60 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="relative flex items-center justify-center"
                     >
-                        {/* Large Circular Image */}
+                        {/* Large Circular Image Carousel */}
                         <div className="relative w-full max-w-[500px] md:max-w-[600px] aspect-square">
                             <motion.div
                                 initial={{ scale: 0.9, opacity: 0 }}
@@ -157,36 +184,65 @@ export default function HeroSection() {
                                 transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
                                 className="relative w-full h-full rounded-full overflow-hidden shadow-2xl ring-4 ring-white"
                             >
-                                <Image
-                                    src="/home.jpg"
-                                    alt="Children receiving education and support"
-                                    className="w-full h-full object-cover"
-                                    width={500}
-                                    height={500}
-                                />
+                                {/* Infinite Carousel Images */}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={currentIndex}
+                                        initial={{ opacity: 0, scale: 1.1 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                                        className="absolute inset-0"
+                                    >
+                                        <Image
+                                            src={carouselImages[currentIndex].src}
+                                            alt={carouselImages[currentIndex].alt}
+                                            className="w-full h-full object-cover"
+                                            width={600}
+                                            height={600}
+                                            priority
+                                        />
+                                    </motion.div>
+                                </AnimatePresence>
+
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E73BE]/10 via-transparent to-transparent" />
                             </motion.div>
+
+                            {/* Carousel Indicator Dots */}
+                            <div className="flex justify-center gap-2.5 mt-6">
+                                {carouselImages.map((_, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => setCurrentIndex(i)}
+                                        className={`rounded-full transition-all duration-500 ${
+                                            i === currentIndex
+                                                ? 'w-8 h-2.5 bg-[#1E73BE]'
+                                                : 'w-2.5 h-2.5 bg-[#1E73BE]/25 hover:bg-[#1E73BE]/40'
+                                        }`}
+                                    />
+                                ))}
+                            </div>
                         </div>
 
-                        {/* Floating Statistic Badge - Circular with Gradient */}
+                        {/* Floating Statistic Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 30, scale: 0.8 }}
                             animate={{
                                 opacity: 1,
                                 y: [0, -10, 0],
-                                scale: 1
+                                scale: 1,
                             }}
                             transition={{
                                 opacity: { duration: 0.8, delay: 1 },
                                 y: {
                                     duration: 3,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 1.2
+                                    ease: 'easeInOut',
+                                    delay: 1.2,
                                 },
-                                scale: { duration: 0.8, delay: 1 }
+                                scale: { duration: 0.8, delay: 1 },
                             }}
-                            className="absolute bottom-8 left-0 md:-left-8 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full bg-gradient-to-br from-[#1E73BE] via-[#0B4F8A] to-[#1E73BE] shadow-2xl flex flex-col items-center justify-center text-white p-6 z-10"
+                            className="absolute bottom-14 left-0 md:-left-8 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full bg-gradient-to-br from-[#1E73BE] via-[#0B4F8A] to-[#1E73BE] shadow-2xl flex flex-col items-center justify-center text-white p-6 z-10"
                         >
                             <div className="text-center">
                                 <motion.div
