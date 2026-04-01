@@ -124,7 +124,7 @@ export default function FocusAreas() {
                     <span className="text-sm font-semibold tracking-wider text-[#1E73BE] uppercase">
                         What We Do
                     </span>
-                    <h1 className="mt-4 text-4xl md:text-6xl font-bold text-gray-900">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-bold text-gray-900 font-heading ">
                         Our Focus Areas
                     </h1>
                     <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
@@ -134,7 +134,7 @@ export default function FocusAreas() {
                 </motion.div>
 
                 {/* GRID */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-5">
                     {focusAreas.map((area, index) => {
                         const isGreen = area.accent === 'green';
 
@@ -144,10 +144,10 @@ export default function FocusAreas() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition"
+                                className="bg-white rounded-3xl p-5 shadow-lg hover:shadow-xl transition"
                             >
                                 {/* ICON + TITLE */}
-                                <div className="flex items-center gap-4 mb-6">
+                                <div className="flex items-center gap-2 mb-6">
                                     <div
                                         className={`w-14 h-14 rounded-2xl flex items-center justify-center ${isGreen ? 'bg-[#4CAF50]/10' : 'bg-[#EAF4FF]'
                                             }`}
@@ -157,7 +157,7 @@ export default function FocusAreas() {
                                                 }`}
                                         />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-gray-900">
+                                    <h2 className="text-2xl font-bold text-gray-900 font-heading ">
                                         {area.title}
                                     </h2>
                                 </div>

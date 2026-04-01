@@ -13,7 +13,7 @@ const events = [
     date: 'March 15, 2024',
     location: 'New Delhi',
     description: 'Join us for an evening of inspiration and generosity as we celebrate our achievements and raise funds for our upcoming projects.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070',
+    image: '/Annual-Charity-Gala.jpg',
     type: 'Fundraiser',
   },
   {
@@ -21,7 +21,7 @@ const events = [
     date: 'April 8-10, 2024',
     location: 'Mumbai',
     description: 'A three-day summit bringing together young changemakers to share ideas, build networks, and learn from social impact leaders.',
-    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070',
+    image: '/Youth-Leadership-Summit.jpg',
     type: 'Conference',
   },
   {
@@ -29,7 +29,7 @@ const events = [
     date: 'April 22, 2024',
     location: 'Multiple Locations',
     description: 'Free health screenings, consultations, and medicine distribution across 50 villages. Volunteer opportunities available.',
-    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=2070',
+    image: '/Rural-Health-Camp-Drive.jpg',
     type: 'Health Camp',
   },
 ];

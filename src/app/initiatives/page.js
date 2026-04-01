@@ -97,14 +97,14 @@ export default function Initiatives() {
                                     <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${initiative.gradient}`} />
 
                                     <div className="relative z-10">
-                                        <h3 className={`font-heading text-3xl md:text-4xl font-bold ${initiative.textColor} mb-6 group-hover:scale-105 transition-transform duration-300`}>
+                                        <h3 className={`font-heading text-2xl  font-bold ${initiative.textColor} mb-6 group-hover:scale-105 transition-transform duration-300`}>
                                             {initiative.title}
                                         </h3>
                                         <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed font-medium">
                                             {initiative.description}
                                         </p>
                                         <div className="pt-6 border-t-2 border-white/50">
-                                            <p className={`font-bold text-lg md:text-xl lg:text-2xl ${initiative.textColor}`}>
+                                            <p className={`font-bold text-lg   ${initiative.textColor}`}>
                                                 {initiative.impact}
                                             </p>
                                         </div>

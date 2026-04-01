@@ -5,6 +5,7 @@ import FocusAreasSection from '@/components/sections/FocusAreasSection';
 import InitiativesSection from '@/components/sections/InitiativesSection';
 import ImpactSection from '@/components/sections/ImpactSection';
 import EventsSection from '@/components/sections/EventsSection';
+import LogoMarqueeSection from '@/components/sections/LogoMarqueeSection';
 
 export const metadata = {
   title: 'Home | Bluebell Foundation',
@@ -15,10 +16,12 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <LogoMarqueeSection />
       <AboutSection />
       <MissionVision />
       <FocusAreasSection />
       <InitiativesSection />
+      <LogoMarqueeSection />
       <ImpactSection />
       <EventsSection />
     </main>

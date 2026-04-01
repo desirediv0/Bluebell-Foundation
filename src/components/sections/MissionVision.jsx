@@ -21,7 +21,7 @@ export default function MissionVision() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-20 font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937]"
         >
           <span className="text-sm font-semibold tracking-wider text-[#1E73BE] uppercase">
             Our Purpose
@@ -45,7 +45,7 @@ export default function MissionVision() {
               <Target className="w-8 h-8 text-[#1E73BE]" />
             </div>
 
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 font-heading ">
               Our Mission
             </h3>
 
@@ -70,7 +70,7 @@ export default function MissionVision() {
               <Eye className="w-8 h-8 text-[#4CAF50]" />
             </div>
 
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 font-heading ">
               Our Vision
             </h3>
 

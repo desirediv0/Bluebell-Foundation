@@ -86,7 +86,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                            className="font-heading text-4xl sm:text-5xl md:text-6xl   font-bold text-[#1F2937] leading-[1.1] tracking-tight"
+                            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937]"
                         >
                             Serving Humanity with{' '}
                             <span className="relative inline-block">
@@ -158,7 +158,7 @@ export default function HeroSection() {
                                 className="relative w-full h-full rounded-full overflow-hidden shadow-2xl ring-4 ring-white"
                             >
                                 <Image
-                                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070"
+                                    src="/home.jpg"
                                     alt="Children receiving education and support"
                                     className="w-full h-full object-cover"
                                     width={500}

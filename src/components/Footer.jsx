@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import LogoMarquee from './LogoMarquee';
 
 const footerLinks = {
     'About Us': ['Our Story', 'Leadership Team', 'Annual Reports', 'Careers', 'Partners'],
@@ -68,14 +69,7 @@ export default function Footer() {
                     {/* Logo & Description */}
                     <div className="lg:col-span-2 space-y-6">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <div>
-                                <span className="font-heading text-xl md:text-2xl font-bold text-white">
-                                    Bluebell Foundation
-                                </span>
-                            </div>
+                            <LogoMarquee mode="rotate" speed={3} className="bg-white p-2 rounded-xl h-16 shadow-lg" />
                         </div>
                         <p className="text-white/70 leading-relaxed">
                             Dedicated to serving humanity with dignity, compassion, and purpose.

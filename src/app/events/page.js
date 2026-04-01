@@ -22,7 +22,7 @@ const events = [
         location: 'Community Center',
         description: 'Free health checkups, consultations, and health awareness activities for the entire community.',
         status: 'completed',
-        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070',
+        image: '/Health-Awareness-Campaign.jpg',
     },
     {
         title: 'Tree Plantation Drive',
@@ -30,7 +30,7 @@ const events = [
         location: 'Dwarka Sector',
         description: 'A community-driven tree plantation drive to promote environmental responsibility and biodiversity conservation.',
         status: 'completed',
-        image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=2070',
+        image: '/Tree-Plantation-Drive.jpg',
     },
     {
         title: 'Food Distribution (Bhandara)',
@@ -38,7 +38,7 @@ const events = [
         location: 'Multiple Locations',
         description: 'Organized food distribution drive providing meals to the needy and spreading awareness about hunger eradication.',
         status: 'completed',
-        image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070',
+        image: '/Food-Distribution.jpg',
     },
 ];
 

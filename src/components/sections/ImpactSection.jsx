@@ -24,7 +24,7 @@ const initiatives = [
     description:
       'Our fleet of mobile health clinics brings essential medical care directly to remote villages. Staffed with qualified doctors and nurses, these clinics provide preventive care, vaccinations, maternal health services, and treatment for common ailments.',
     image:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070',
+      '/Mobile-Health-Clinics.jpg',
     stats: [
       { label: 'Villages Covered', value: '800+' },
       { label: 'Patients Treated', value: '500,000' },
@@ -36,7 +36,7 @@ const initiatives = [
     description:
       'Empowering women through collective strength, our self-help groups provide financial literacy training, micro-loans, and entrepreneurship support. These groups have transformed thousands of women into confident business owners and community leaders.',
     image:
-      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070',
+      '/Women-Self-Help Groups.jpg',
     stats: [
       { label: 'Groups Formed', value: '3,500' },
       { label: 'Women Members', value: '45,000' },
@@ -62,7 +62,7 @@ export default function ImpactSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-20 font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937]"
         >
           <span className="text-sm font-semibold tracking-wider text-[#1E73BE] uppercase">
             Our Impact
@@ -118,7 +118,7 @@ export default function ImpactSection() {
 
               {/* CONTENT */}
               <div className="space-y-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading ">
                   {item.title}
                 </h3>
 
