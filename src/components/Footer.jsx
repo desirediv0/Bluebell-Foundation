@@ -37,7 +37,7 @@ export default function Footer() {
                     <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
                         <div>
                             <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                                Let's build a <span className="text-[#EAF4FF]">better tomorrow</span> together.
+                                Let&apos;s build a <span className="text-[#EAF4FF]">better tomorrow</span> together.
                             </h3>
                             <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl">
                                 Join our mission to empower communities and transform lives across the nation.
