@@ -6,7 +6,6 @@ import { Menu, X, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import LogoMarquee from './LogoMarquee';
 
 const navLinks = [
     { name: 'About Us', href: '/about-us' },
@@ -68,7 +67,14 @@ export default function Header() {
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center">
-                        <LogoMarquee mode="rotate" speed={3} />
+                        <Image
+                            src="/logo.png"
+                            alt="Bluebell Foundation"
+                            width={150}
+                            height={60}
+                            className="h-10 md:h-12 lg:h-14 w-auto"
+                            priority
+                        />
                     </Link>
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-6 ">

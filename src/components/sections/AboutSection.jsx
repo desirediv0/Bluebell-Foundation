@@ -67,16 +67,16 @@ export default function AboutSection() {
                                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                                     className="group"
                                 >
-                                    <div className={`${stat.color} p-6 md:p-8 rounded-3xl text-center hover:shadow-card transition-all duration-500 hover:-translate-y-2 border border-gray-200/50 hover:border-[#1E73BE]/20`}>
+                                    <div className={`${stat.color} p-4 rounded-3xl text-center hover:shadow-card transition-all duration-500 hover:-translate-y-2 border border-gray-200/50 hover:border-[#1E73BE]/20`}>
                                         <div className="flex justify-center mb-4">
-                                            <div className={`w-12 h-12 md:w-16 md:h-16 ${stat.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                                            <div className={`w-12 h-12 md:w-16 md:h-16 ${stat.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                                                 <stat.icon className={`w-6 h-6 md:w-8 md:h-8 ${stat.iconColor}`} />
                                             </div>
                                         </div>
                                         <div className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B4F8A] mb-2">
                                             {stat.number}
                                         </div>
-                                        <div className="text-base md:text-lg text-[#1F2937] font-semibold">
+                                        <div className="text-base text-[#1F2937] font-semibold">
                                             {stat.label}
                                         </div>
                                     </div>

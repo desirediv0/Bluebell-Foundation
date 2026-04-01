@@ -39,7 +39,7 @@ export default function InitiativesSection() {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section ref={ref} className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-white via-[#EAF4FF]/30 to-white overflow-x-hidden">
+        <section ref={ref} className="py-12 md:py-16  bg-gradient-to-br from-white via-[#EAF4FF]/30 to-white overflow-x-hidden">
             <div className="container-padding max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -67,7 +67,7 @@ export default function InitiativesSection() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="group"
                         >
-                            <div className={`bg-gradient-to-br ${initiative.bgGradient} h-full p-6 md:p-8 lg:p-10 rounded-3xl shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-white/50 relative overflow-hidden`}>
+                            <div className={`bg-gradient-to-br ${initiative.bgGradient} h-full p-6   rounded-3xl shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-white/50 relative overflow-hidden`}>
                                 {/* Gradient accent bar */}
                                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${initiative.gradient}`} />
 

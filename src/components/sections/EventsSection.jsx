@@ -106,10 +106,6 @@ export default function EventsSection() {
                     {event.description}
                   </p>
 
-                  <Button variant="ghost" className="mt-6 -ml-4 text-[#1E73BE] hover:bg-[#1E73BE]/5">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
                 </div>
               </div>
             </motion.div>

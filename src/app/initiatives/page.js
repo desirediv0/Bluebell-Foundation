@@ -83,7 +83,7 @@ export default function Initiatives() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
                         {initiatives.map((initiative, index) => (
                             <motion.div
                                 key={initiative.title}
@@ -92,7 +92,7 @@ export default function Initiatives() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="group"
                             >
-                                <div className={`bg-gradient-to-br ${initiative.bgGradient} h-full p-10 rounded-3xl shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-white/50 relative overflow-hidden`}>
+                                <div className={`bg-gradient-to-br ${initiative.bgGradient} h-full p-5 rounded-3xl shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-white/50 relative overflow-hidden`}>
                                     {/* Gradient accent bar */}
                                     <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${initiative.gradient}`} />
 

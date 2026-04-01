@@ -143,14 +143,7 @@ export default function ImpactSection() {
                   ))}
                 </div>
 
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="mt-4 border-[#1E73BE] text-[#1E73BE] hover:bg-[#1E73BE]/10"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+              
               </div>
             </motion.div>
           ))}

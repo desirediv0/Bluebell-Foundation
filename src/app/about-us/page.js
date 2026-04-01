@@ -35,7 +35,7 @@ export default function AboutUs() {
                         </h1>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20">
+                    <div className="grid lg:grid-cols-2 gap-8 md:gap-12  items-start mb-12 ">
                         <motion.div
                             initial={{ opacity: 0, x: -40 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
@@ -66,7 +66,7 @@ export default function AboutUs() {
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                                    className="bg-[#EAF4FF] p-6 md:p-8 rounded-2xl text-center hover:bg-[#EAF4FF]/80 transition-colors duration-300"
+                                    className="bg-[#EAF4FF] p-4 rounded-2xl text-center hover:bg-[#EAF4FF]/80 transition-colors duration-300"
                                 >
                                     <div className="font-heading text-4xl md:text-5xl font-bold text-[#0B4F8A] mb-2">
                                         {stat.number}
@@ -105,7 +105,7 @@ export default function AboutUs() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
-                                className="bg-white p-6 md:p-8 lg:p-10 xl:p-14 rounded-3xl shadow-soft"
+                                className="bg-white p-6  rounded-2xl shadow-soft"
                             >
                                 <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[#1F2937] mb-4 md:mb-6">
                                     {section.title}
@@ -120,7 +120,7 @@ export default function AboutUs() {
                                         ))}
                                     </ul>
                                 ) : (
-                                    <p className="text-base md:text-lg lg:text-xl text-[#1F2937] leading-relaxed">
+                                    <p className="text-base  text-[#1F2937] leading-relaxed">
                                         {section.content}
                                     </p>
                                 )}

@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Linkedin, Mail, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import Image from 'next/image';
 
 const leaders = [
@@ -79,7 +79,7 @@ export default function Leadership() {
                     <span className="text-sm font-semibold tracking-wider text-[#1E73BE] uppercase">
                         Meet the Team
                     </span>
-                    <h1 className="mt-4 text-4xl md:text-6xl font-bold text-gray-900">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-bold text-gray-900 font-heading">
                         Our Leadership
                     </h1>
                     <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
@@ -116,7 +116,7 @@ export default function Leadership() {
 
                                 {/* CONTENT */}
                                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
                                         {leader.name}
                                     </h3>
                                     <p className="text-[#1E73BE] font-semibold text-lg mt-2 mb-4">
@@ -137,21 +137,7 @@ export default function Leadership() {
                                         </div>
                                     </div>
 
-                                    {/* SOCIAL */}
-                                    <div className="flex gap-4">
-                                        <a
-                                            href="#"
-                                            className="w-11 h-11 rounded-xl bg-[#EAF4FF] flex items-center justify-center hover:bg-[#1E73BE] hover:text-white transition"
-                                        >
-                                            <Linkedin />
-                                        </a>
-                                        <a
-                                            href="mailto:admin@bluebellservice.co.in"
-                                            className="w-11 h-11 rounded-xl bg-[#EAF4FF] flex items-center justify-center hover:bg-[#1E73BE] hover:text-white transition"
-                                        >
-                                            <Mail />
-                                        </a>
-                                    </div>
+
                                 </div>
 
                             </div>

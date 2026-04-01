@@ -108,10 +108,7 @@ export default function Events() {
                                         <p className="text-lg text-[#6B7280] leading-relaxed mb-6">
                                             {event.description}
                                         </p>
-                                        <Button variant="ghost" className="text-[#1E73BE] hover:bg-[#1E73BE]/5 group">
-                                            Learn More
-                                            <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                        </Button>
+
                                     </div>
                                 </div>
                             </motion.div>
