@@ -83,7 +83,7 @@ export default function ImpactSection() {
           className="relative  mb-28"
         >
           <Image
-            src="/images/donation 2.png"
+            src="/images/donation-2.png"
             alt="Together We Care"
             width={1400}
             height={700}
