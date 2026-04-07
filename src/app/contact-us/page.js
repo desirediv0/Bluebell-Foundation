@@ -12,6 +12,7 @@ export default function ContactUs() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phoneNumber: '',
         subject: '',
         message: '',
     });
@@ -25,9 +26,9 @@ export default function ContactUs() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        console.log('Contact Form submitted:', formData);
         alert('Thank you for your message! We will get back to you soon.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', phoneNumber: '', subject: '', message: '' });
     };
 
     const contactInfo = [
@@ -56,7 +57,7 @@ export default function ContactUs() {
 
     return (
         <main className="pt-24 md:pt-32">
-            <section ref={ref} className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#EAF4FF] via-white to-[#EAF4FF]/30 overflow-x-hidden">
+            <section ref={ref} className="py-12 md:py-16  bg-gradient-to-br from-[#EAF4FF] via-white to-[#EAF4FF]/30 overflow-x-hidden">
                 <div className="container-padding max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -120,12 +121,12 @@ export default function ContactUs() {
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 lg:p-10 xl:p-14 rounded-3xl shadow-soft">
+                            <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-3xl shadow-soft">
                                 <div className="space-y-6">
                                     <div>
                                         <label
                                             htmlFor="name"
-                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-3"
+                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-2"
                                         >
                                             Name
                                         </label>
@@ -136,13 +137,14 @@ export default function ContactUs() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 md:px-5 py-3 md:py-4 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
+                                            placeholder='Enter your name'
+                                            className="w-full px-4 md:px-5 py-2 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
                                         />
                                     </div>
                                     <div>
                                         <label
                                             htmlFor="email"
-                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-3"
+                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-2"
                                         >
                                             Email
                                         </label>
@@ -150,16 +152,35 @@ export default function ContactUs() {
                                             type="email"
                                             id="email"
                                             name="email"
+                                            placeholder='Enter your email'
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 md:px-5 py-3 md:py-4 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
+                                            className="w-full px-4 md:px-5 py-2 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="phoneNumber"
+                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-2"
+                                        >
+                                            Phone Number
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            id="phoneNumber"
+                                            name="phoneNumber"
+                                            value={formData.phoneNumber}
+                                            onChange={handleChange}
+                                            required
+                                            placeholder='+91 98765-43210'
+                                            className="w-full px-4 md:px-5 py-2 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
                                         />
                                     </div>
                                     <div>
                                         <label
                                             htmlFor="subject"
-                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-3"
+                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-2"
                                         >
                                             Subject
                                         </label>
@@ -170,13 +191,14 @@ export default function ContactUs() {
                                             value={formData.subject}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 md:px-5 py-3 md:py-4 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
+                                            placeholder='Enter your subject'
+                                            className="w-full px-4 md:px-5 py-2 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300"
                                         />
                                     </div>
                                     <div>
                                         <label
                                             htmlFor="message"
-                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-3"
+                                            className="block text-sm md:text-base font-semibold text-[#1F2937] mb-2"
                                         >
                                             Message
                                         </label>
@@ -187,6 +209,7 @@ export default function ContactUs() {
                                             onChange={handleChange}
                                             required
                                             rows="6"
+                                            placeholder='Enter your message'
                                             className="w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E73BE] focus:border-[#1E73BE] transition-all duration-300 resize-none"
                                         />
                                     </div>
