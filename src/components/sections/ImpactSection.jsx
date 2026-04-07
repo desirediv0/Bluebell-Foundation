@@ -2,9 +2,8 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+
 
 const initiatives = [
   {
@@ -12,7 +11,7 @@ const initiatives = [
     description:
       'Our flagship education initiative has established over 150 schools in underserved regions, providing quality education to children who previously had no access to schooling. Each school is equipped with modern facilities, trained teachers, and comprehensive learning materials.',
     image:
-      'https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=2013',
+      '/images/education.png',
     stats: [
       { label: 'Schools Built', value: '150+' },
       { label: 'Students Enrolled', value: '85,000' },
@@ -81,16 +80,16 @@ export default function ImpactSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-xl mb-28"
+          className="relative  mb-28"
         >
           <Image
-            src="/img (7).jpeg"
+            src="/images/donation 2.png"
             alt="Together We Care"
             width={1400}
             height={700}
-            className="w-full h-[420px] object-cover"
+            className="max-w-3xl  h-full object-cover mx-auto"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent" />
+
         </motion.div>
 
         {/* INITIATIVES */}
@@ -143,7 +142,7 @@ export default function ImpactSection() {
                   ))}
                 </div>
 
-              
+
               </div>
             </motion.div>
           ))}

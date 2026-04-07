@@ -11,6 +11,7 @@ const navLinks = [
     { name: 'About Us', href: '/about-us' },
     { name: 'Focus Areas', href: '/focus-areas' },
     { name: 'Initiatives', href: '/initiatives' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact-us' },
 ];
@@ -87,7 +88,7 @@ export default function Header() {
                             >
                                 <Link
                                     href={link.href}
-                                    className="link-underline text-base xl:text-lg text-gray-700 hover:text-[#1E73BE] font-semibold transition-colors duration-300 relative group"
+                                    className="link-underline text-base  text-gray-700 hover:text-[#1E73BE] font-semibold transition-colors duration-300 relative group"
                                 >
                                     {link.name}
                                     <motion.span
