@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export default function ContactUs() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -24,11 +25,30 @@ export default function ContactUs() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Contact Form submitted:', formData);
-        alert('Thank you for your message! We will get back to you soon.');
-        setFormData({ name: '', email: '', phoneNumber: '', subject: '', message: '' });
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Thank you for your message! We have also sent a confirmation email to you.');
+                setFormData({ name: '', email: '', phoneNumber: '', subject: '', message: '' });
+            } else {
+                alert(`Error: ${result.error || 'Failed to send message'}`);
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Something went wrong. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const contactInfo = [
@@ -218,9 +238,10 @@ export default function ContactUs() {
                                         variant="hero"
                                         size="xl"
                                         className="w-full group"
+                                        disabled={isSubmitting}
                                     >
-                                        Send Message
-                                        <Send className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                                        {!isSubmitting && <Send className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />}
                                     </Button>
                                 </div>
                             </form>

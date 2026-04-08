@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function Donate() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -29,11 +30,30 @@ export default function Donate() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Donation Form Data:', formData);
-        alert(`Thank you, ${formData.name}! Your donation of ₹${formData.amount} has been recorded locally (check console). We will contact you at ${formData.phoneNumber} for verification.`);
-        setFormData({ name: '', email: '', phoneNumber: '', amount: '' });
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('/api/donate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert(`Thank you, ${formData.name}! We have received your donation details and sent a confirmation email to ${formData.email}.`);
+                setFormData({ name: '', email: '', phoneNumber: '', amount: '' });
+            } else {
+                alert(`Error: ${result.error || 'Failed to process donation'}`);
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Something went wrong. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -192,9 +212,14 @@ export default function Donate() {
                                 </div>
                             </div>
 
-                            <Button type="submit" size="xl" className="w-full py-8 text-lg font-bold rounded-2xl shadow-lg shadow-[#1E73BE]/30 hover:shadow-[#1E73BE]/40 hover:-translate-y-1 transition-all duration-300 gap-3">
+                            <Button 
+                                type="submit" 
+                                size="xl" 
+                                disabled={isSubmitting}
+                                className="w-full py-8 text-lg font-bold rounded-2xl shadow-lg shadow-[#1E73BE]/30 hover:shadow-[#1E73BE]/40 hover:-translate-y-1 transition-all duration-300 gap-3"
+                            >
                                 <Heart className="w-6 h-6 fill-white" />
-                                Confirm Donation
+                                {isSubmitting ? 'Processing...' : 'Confirm Donation'}
                             </Button>
                             
                             <p className="text-center text-xs text-gray-400 font-medium">
