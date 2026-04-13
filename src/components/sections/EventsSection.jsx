@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const events = [
   {
@@ -74,9 +75,11 @@ export default function EventsSection() {
             >
               <div className="bg-white rounded-3xl overflow-hidden border border-gray-200/50 hover:border-[#1E73BE]/20 hover:shadow-card transition-all duration-500">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <Image
                     src={event.image}
                     alt={event.title}
+                    width={640}
+                    height={400}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">

@@ -19,7 +19,7 @@ const galleryItems = [
   { id: 12, title: 'Campaign Activities 3', category: 'Food Support', image: '/images/card (3).jpeg', alt: 'Bluebell Foundation campaign activity 3' },
   { id: 13, title: 'Campaign Activities 4', category: 'Food Support', image: '/images/card (4).jpeg', alt: 'Bluebell Foundation campaign activity 4' },
   { id: 14, title: 'Campaign Activities 5', category: 'Our Campaigns', image: '/images/card (5).jpeg', alt: 'Bluebell Foundation campaign activity 5' },
-  { id: 15, title: 'Campaign Activities 6', category: 'Our Campaigns', image: '/images/card (6).jpeg', alt: 'Bluebell Foundation campaign activity 6' },
+  { id: 15, title: 'Campaign Activities 6', category: 'Food Support', image: '/images/card (6).jpeg', alt: 'Bluebell Foundation campaign activity 6' },
   { id: 16, title: 'Campaign Activities 7', category: 'Our Campaigns', image: '/images/card (7).jpeg', alt: 'Bluebell Foundation campaign activity 7' },
   { id: 17, title: 'Campaign Activities 8', category: 'Our Campaigns', image: '/images/card (8).jpeg', alt: 'Bluebell Foundation campaign activity 8' },
   { id: 18, title: 'Campaign Activities 9', category: 'Our Campaigns', image: '/images/card (9).jpeg', alt: 'Bluebell Foundation campaign activity 9' },
@@ -72,7 +72,7 @@ export default function Gallery() {
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
-
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
             backgroundSize: '32px 32px',
           }}
         />
@@ -123,10 +123,9 @@ export default function Gallery() {
       {/* ────── Sticky Filter Bar ────── */}
       <div className="sticky top-16 z-30 bg-white/90 backdrop-blur-xl border-b border-slate-200/70 shadow-[0_1px_12px_rgba(0,0,0,0.06)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-1.5 overflow-x-auto py-3.5 scrollbar-hide">
+          <div className="flex flex-wrap gap-2 py-3.5 justify-center">
             {TABS.map((tab) => {
               const isActive = activeTab === tab.value;
-              const s = CATEGORY_STYLE[tab.value] ?? CATEGORY_STYLE['All'];
               const count =
                 tab.value === 'All'
                   ? galleryItems.length
@@ -138,7 +137,7 @@ export default function Gallery() {
                   onClick={() => setActiveTab(tab.value)}
                   className={`
                     group relative flex items-center gap-2 whitespace-nowrap rounded-full px-4 py-2
-                    text-[13px] font-semibold shrink-0 select-none outline-none transition-all duration-200
+                    text-[13px] font-semibold select-none outline-none transition-all duration-200
                     focus-visible:ring-2 focus-visible:ring-[#1E73BE]/40
                     ${isActive
                       ? 'bg-[#0B2545] text-white shadow-lg shadow-slate-900/15'
@@ -147,8 +146,7 @@ export default function Gallery() {
                   `}
                 >
                   <span className={`
-                    w-2 h-2 rounded-full shrink-0 transition-opacity duration-200
-                    ${s.dot}
+                   
                     ${isActive ? 'opacity-100' : 'opacity-50 group-hover:opacity-80'}
                   `} />
                   {tab.label}
@@ -204,13 +202,13 @@ export default function Gallery() {
                     y: { duration: 0.3, delay: index * 0.022 },
                     scale: { duration: 0.3, delay: index * 0.022 },
                   }}
-                  className="group relative flex flex-col bg-white rounded-2xl overflow-hidden
+                  className="group relative flex flex-col bg-white rounded-xl overflow-hidden
                              border border-slate-100 hover:border-slate-200/80
                              shadow-sm hover:shadow-2xl hover:shadow-slate-300/40
                              transition-all duration-500 cursor-pointer"
                 >
                   {/* Image area */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
+                  <div className="relative aspect-[3/3] overflow-hidden bg-slate-100 shrink-0">
                     <Image
                       src={item.image}
                       alt={item.alt}
@@ -236,8 +234,6 @@ export default function Gallery() {
                         {item.category}
                       </span>
                     </div>
-
-
                   </div>
 
                   {/* Card body */}
